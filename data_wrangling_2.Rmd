@@ -67,6 +67,28 @@ swm_df =
   )
 ```
 
+## API 
 
+Get water data from NYC.. 
+```{r}
+nyc_water_df = 
+  GET("https://data.cityofnewyork.us/resource/ia2d-e54m.csv") |> 
+  content("parsed")
+```
 
+BRFSS Data 
+```{r}
+brfss_df = 
+  GET(
+    "https://data.cdc.gov/resource/acme-vg9e.csv",
+      query = list("$limit" = 5000)) |> 
+  content("parsed")
+```
+
+Pokemon data: 
+```{r}
+poke_df = 
+  GET("https://pokeapi.co/api/v2/pokemon/ditto") |> 
+  content()
+```
 
